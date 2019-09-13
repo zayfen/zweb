@@ -18,8 +18,9 @@ boot(router)
 
 app.use(router.routes())
 
-app.listen(3000);
+const PORT = process.env.PORT || 8000
+app.listen(PORT);
 
-console.log("Server Running On Port 3000")
+console.log("Server Running On Port " + PORT)
 
 
