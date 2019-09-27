@@ -25,6 +25,10 @@ export function readLines(path: string) {
 }
 
 
+export function existed (path: string): boolean {
+  return fs.existsSync(path)
+}
+
 
 /*
   * read ts file
@@ -40,6 +44,8 @@ export function readFile(tsFile: string): string {
   const content = fs.readFileSync(tsFile, { encoding: 'utf8' })
   return content
 }
+
+
 
 export function isDirectory(path: string): boolean {
   if (!fs.existsSync(path)) {
@@ -77,4 +83,24 @@ export function listDirectoryFiles(dir: string, level: number = -1): Array<strin
   }
 
   return files
+}
+
+function formatDate(d: Date) {
+  let month = '' + (d.getMonth() + 1)
+  let day = '' + d.getDate()
+  let year = d.getFullYear()
+
+  if (month.length < 2) 
+      month = '0' + month
+  if (day.length < 2) 
+      day = '0' + day
+
+  return [year, month, day].join('/')
+}
+
+export function fileModifyDate (path: string): string {
+  let date: string = ''
+  let stat = fs.statSync(path)
+  date = formatDate(stat.mtime)
+  return date
 }

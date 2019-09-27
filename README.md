@@ -8,17 +8,7 @@
 
 #### 工程结构树
 
-├── app.json
-├── config
-├── LICENSE
-├── logs
-├── node_modules
-├── package.json
-├── package-lock.json
-├── README.md
-├── src
-├── tests
-└── tsconfig.json
+![工程结构树](https://res.cloudinary.com/zayfen/image/upload/v1569573329/img/njlr9vosuraeyuglt7uq.png)
 
 
 #### 重要文件（夹）介绍

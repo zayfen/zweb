@@ -3,22 +3,35 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "local-dev": "ts-node src/server.ts",
     "dev": "pm2 start app.json",
     "start": "pm2 start app.json --env production",
     "pm2-reload": "pm2 reload zweb",
     "pm2-list": "pm2 list",
     "pm2-stop": "pm2 stop zweb",
-    "test": "ts-node tests/index.ts"
+    "test": "mocha -r ts-node/register tests/**/*.ts"
   },
   "devDependencies": {
-    "@babel/parser": "^7.5.5"
+    "@babel/parser": "^7.5.5",
+    "@types/chai": "^4.2.2",
+    "@types/mocha": "^5.2.7",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0"
   },
   "dependencies": {
     "@babel/types": "^7.6.1",
+    "@tencent/pm2": "^3.5.1",
     "@types/koa": "^2.0.49",
     "@types/koa-router": "^7.0.42",
+    "@types/koa-session": "^5.10.1",
+    "@types/koa2-cors": "^2.0.1",
+    "@types/nedb": "^1.8.9",
     "koa": "^2.8.1",
+    "koa-body": "^4.1.1",
     "koa-router": "^7.4.0",
+    "koa-session": "^5.12.3",
+    "koa2-cors": "^2.0.6",
+    "nedb": "^1.8.0",
     "nodemon": "^1.19.2",
     "pm2": "^3.5.1",
     "ts-node": "^8.3.0",

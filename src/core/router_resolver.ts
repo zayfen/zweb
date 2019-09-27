@@ -1,3 +1,4 @@
+
 import * as path from 'path'
 import * as KoaRouter from 'koa-router'
 import * as parser from '@babel/parser'
@@ -91,10 +92,10 @@ async function routerFromMethods(instance: BaseRouter, methods: MethodsMetas, lo
 
     httpDecorators.forEach((decorator, index) => {
       let callee: string = decorator.callee
-      let args: Array<string | MiddleWare> = decorator.args
+      let args: Array<string> = decorator.args
 
       let httpMethod: string = callee
-      let path: string = normalizePath(prefix + args[0])
+      let path: string = normalizePath(args[0])
       console.log("HttpMethod: ", httpMethod, " ;Path: ", path)
 
       if (index == 0) { // 防止多次添加method

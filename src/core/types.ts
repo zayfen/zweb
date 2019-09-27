@@ -1,5 +1,5 @@
 import * as Koa from 'koa'
-
+import * as Router  from 'koa-router'
 
 interface RouterPrefix {
   prefix: string
@@ -27,7 +27,11 @@ export type Decorators = Array<Decorator>
 
 
 export interface MiddleWare extends Function {
-  (ctx: Koa.Context, next: () => void): void;
+  (ctx: Koa.Context, next: () => Promise<any>): any;
 }
 
+
+export interface MiddleWare extends Router.IMiddleware {
+
+}
 // export type MiddleWare = (ctx: Koa.Context, next: () => any) => any
