@@ -1,6 +1,6 @@
 import * as Koa from 'koa'
 
-export default function (ctx: Koa.Context, next: () => void) {
+export default async function (ctx: Koa.Context, next: () => Promise<any>) {
   console.log("auth")
-  next()
+  await next()
 }
