@@ -3,12 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "postinstall": "pm2 install typescript ts-node",
     "local-dev": "ts-node src/server.ts",
     "dev": "pm2 start app.json",
     "start": "pm2 start app.json --env production",
-    "pm2-reload": "pm2 reload zweb",
-    "pm2-list": "pm2 list",
-    "pm2-stop": "pm2 stop zweb",
     "test": "mocha -r ts-node/register tests/**/*.ts"
   },
   "devDependencies": {
