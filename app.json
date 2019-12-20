@@ -1,7 +1,8 @@
 {
   "apps" : [{
     "name": "zweb",
-    "script": "./src/server.ts",
+    "script" "ts-node",
+    "args": "./src/server.ts",
     "cwd": ".",
     "instances" : "2",
     "exec_mode": "cluster",
